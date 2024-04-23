@@ -1,6 +1,6 @@
-import { makeStyles } from '@mui/material';
+import { makeStyles } from 'tss-react/mui';
 
-export default makeStyles({
+export default makeStyles()((theme) => ({
   media: {
     height: 250,
   },
@@ -35,4 +35,4 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
-});
+}));

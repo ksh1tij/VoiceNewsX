@@ -5,16 +5,17 @@ import alanBtn from '@alan-ai/alan-sdk-web';
 
 import { NewsCards } from './components';
 import useStyles from './styles';
+import alanAiLogo from './images/alan-ai-logo.png';
 
 const App = () => {
   const [activeArticle, setActiveArticle] = useState(0);
   const [newsArticles, setNewsArticles] = useState([]);
 
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   useEffect(() => {
     alanBtn({
-      key: '64370f4c903e66c5b517887fefa45c1b2e956eca572e1d8b807a3e2338fdd0dc/stage',
+      key: 'b05faf10e0f9a2de4cdc4e5605aaaf832e956eca572e1d8b807a3e2338fdd0dc/stage',
       onCommand: ({ command, articles, number }) => {
         if (command === 'newHeadlines') {
           setNewsArticles(articles);
@@ -47,7 +48,7 @@ const App = () => {
             <div className={classes.card}><Typography variant="h5" component="h2">Try saying: <br /><br />Go back</Typography></div>
           </div>
         ) : null}
-        <img src="./images/alan-ai-logo.webp" className={classes.alanLogo} alt="logo" />
+        <img src={alanAiLogo} className={classes.alanLogo} alt="logo" />
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
       {!newsArticles.length ? (

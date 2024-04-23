@@ -1,11 +1,12 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typography } from '@mui/material';
 
+import newsPlaceholder from '../../../images/news-placeholder.png';
 
 import useStyles from './styles';
 
 const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, activeArticle, i }) => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [elRefs, setElRefs] = useState([]);
   const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
 
@@ -24,7 +25,7 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
   return (
     <Card ref={elRefs[i]} className={ activeArticle === i ? classes.activeCard : classes.card}>
       <CardActionArea href={url} target="_blank">
-        <CardMedia className={classes.media} image={urlToImage || '/src/images/news-placeholder.png'} title={title} />
+        <CardMedia className={classes.media} image={urlToImage || newsPlaceholder} title={title} />
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">{(new Date(publishedAt)).toDateString()}</Typography>
           <Typography variant="body2" color="textSecondary" component="h2">{source.name}</Typography>

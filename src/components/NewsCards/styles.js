@@ -1,6 +1,6 @@
-import { makeStyles } from '@mui/material';
+import { makeStyles } from 'tss-react/mui';
 
-export default makeStyles({
+export default makeStyles()((theme) => ({
   card: {
     display: 'flex',
     flexDirection: 'column',
@@ -18,4 +18,4 @@ export default makeStyles({
   container: {
     padding: '0 5%', width: '100%', margin: 0,
   },
-});
+}));

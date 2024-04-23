@@ -1,6 +1,6 @@
-import { makeStyles } from '@mui/material';
+import { makeStyles } from 'tss-react/mui';
 
-export default makeStyles((theme) => ({
+export default makeStyles()((theme) => ({
   footer: {
     textAlign: 'center',
     position: 'fixed',
@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '120px',
+    height: '40px',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
